@@ -21,9 +21,9 @@ namespace QuickResponder.Domain
         public Genders Gender { get; set; }
         public DateOnly DateOfBirth { get; set; }
         public string PostalCode { get; set; }
-        List<Medication> Medications { get; set; } = new List<Medication>();
-        List<MedicalDevice> MedicalEquipment { get; set; } = new List<MedicalDevice>();
-        List<MedicalCondition> MedicalConditions { get; set; } = new List<MedicalCondition>();
+        public List<Prescription> Prescriptions { get; set; } = new List<Prescription>();
+        public List<MedicalDevice> MedicalEquipment { get; set; } = new List<MedicalDevice>();
+        public List<MedicalCondition> MedicalConditions { get; set; } = new List<MedicalCondition>();
         public List<Allergy> Allergies { get; set; } = new List<Allergy>();
         
         /*

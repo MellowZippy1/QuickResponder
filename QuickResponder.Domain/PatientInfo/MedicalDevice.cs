@@ -14,7 +14,7 @@ namespace QuickResponder.Domain
          * Class 3: High-risk devices (Pacemakers, deep-brain stimulators)
          * Source: https://jamanetwork.com/journals/jama/fullarticle/1817798
          */
-
+        public Guid ID { get; set; }
         public int Class { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

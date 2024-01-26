@@ -8,13 +8,7 @@ namespace QuickResponder.Domain
 {
     public class Medication
     {
+        public Guid ID { get; set; }
         public string Name { get; set; }
-
-        /* IMPORTANT NOTE:
-         * Dosages are measured in milligrams.
-         * Drugs in liquid form are measured in milligrams per milliliter.
-         */
-        public int Dosage { get; set; } 
-        public TimeSpan TimeBetweenDosages { get; set; } 
     }
 }
