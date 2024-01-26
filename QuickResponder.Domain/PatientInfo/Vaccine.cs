@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickResponder.Domain
 {
-    public class Responder : User
+    public class Vaccine
     {
         public Guid ID { get; set; }
-        public List<Patient> PatientHistory { get; set; } = new List<Patient>();
+        public string Name { get; set; }
+        public DateOnly VaccineTakenAt { get; set; }
     }
 }
