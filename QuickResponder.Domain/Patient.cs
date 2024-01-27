@@ -28,8 +28,8 @@ namespace QuickResponder.Domain
         
         /*
          * Additional information
-         */
-
+         */ 
+         
         public BloodType BloodType { get; set; }
         public string Religion { get; set; }
         public List<Vaccine> VaccineHistory { get; set; } = new List<Vaccine>();

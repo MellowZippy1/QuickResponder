@@ -9,6 +9,8 @@ namespace QuickResponder.Domain
     public class Prescription
     {
         public Guid ID { get; set; }
+        public Guid PatientId { get; set; }
+        public Patient Patient { get; set; }
         public Medication Medication { get; set; }
         public Guid MedicationId { get; set; }
 
