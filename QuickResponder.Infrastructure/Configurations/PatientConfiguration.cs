@@ -11,13 +11,30 @@ public class PatientConfiguration : IEntityTypeConfiguration<Patient>
         builder.HasKey(e => e.ID);
 
         builder.Property<string>(e => e.FullName).HasMaxLength(60);
+        builder.Property<string>(e => e.Password).HasMaxLength(255);
+        builder.Property<string>(e => e.Email).HasMaxLength(320);
+        builder.Property<string>(e => e.Phone).HasMaxLength(15);
 
         builder
             .HasMany<Prescription>(e => e.Prescriptions)
             .WithOne(e => e.Patient)
             .HasForeignKey(e => e.PatientId);
-        
+
+        builder
+            .HasMany<MedicalDevice>(e => e.MedicalEquipment);
+
+        builder
+            .HasMany<MedicalCondition>(e => e.MedicalConditions);
+
         builder
             .HasMany<Allergy>(e => e.Allergies);
+
+        builder
+            .HasMany<Vaccine>(e => e.VaccineHistory);
+
+        builder
+            .HasMany<Incident>(e => e.Incidents)
+            .WithOne(e => e.Patient)
+            .HasForeignKey(e => e.PatientID);
     }
 }

@@ -29,10 +29,11 @@ namespace QuickResponder.Domain
         /*
          * Additional information
          */ 
-         
+        
         public BloodType BloodType { get; set; }
         public string Religion { get; set; }
         public List<Vaccine> VaccineHistory { get; set; } = new List<Vaccine>();
+        public List<Incident> Incidents { get; set; } = new List<Incident>();
 
         //                 Name | Phone number
         public Dictionary<string, string> EmergencyContacts = new Dictionary<string, string>();
