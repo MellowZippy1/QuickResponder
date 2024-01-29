@@ -8,7 +8,7 @@ namespace QuickResponder.Domain
 {
     public class Responder : User
     {
-        public Guid ID { get; set; }
+        public Guid ResponderID { get; set; }
         public List<Incident> PatientHistory { get; set; } = new List<Incident>();
     }
 }

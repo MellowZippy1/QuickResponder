@@ -1,0 +1,62 @@
+[
+  {
+    "ID": "1a1f0e9c-d76d-4aa2-9b1a-d0e7fc44f154",
+    "Name": "Aspirin"
+  },
+  {
+    "ID": "86e0f2e0-dc2f-4b63-9f38-ff64b4aa2e9e",
+    "Name": "Ibuprofen"
+  },
+  {
+    "ID": "9e8f8b05-8279-4c04-8e90-2d4f3690e597",
+    "Name": "Acetaminophen"
+  },
+  {
+    "ID": "be3251bf-4875-496b-b06f-0a166587c891",
+    "Name": "Lisinopril"
+  },
+  {
+    "ID": "7b66368c-1d4e-44d8-99e6-816f2247d3ef",
+    "Name": "Metformin"
+  },
+  {
+    "ID": "4f3f901b-0684-49ea-a0a5-0eab8bc839c0",
+    "Name": "Levothyroxine"
+  },
+  {
+    "ID": "2d9d876a-7c4f-4cc7-9373-79b09b56d5e1",
+    "Name": "Simvastatin"
+  },
+  {
+    "ID": "ba1b4eae-b6fc-4854-bc99-7248a92bea1b",
+    "Name": "Atorvastatin"
+  },
+  {
+    "ID": "3a7f8102-1e44-4f67-927f-8b8a9bf9235f",
+    "Name": "Amlodipine"
+  },
+  {
+    "ID": "e73b5085-8c1f-4c91-b570-9b8902510e44",
+    "Name": "Warfarin"
+  },
+  {
+    "ID": "5867317a-8a84-4c8b-90a0-7db52f98e981",
+    "Name": "Metoprolol"
+  },
+  {
+    "ID": "7c6b579e-8b96-48c0-a1fe-d3b7767a9f48",
+    "Name": "Hydrochlorothiazide"
+  },
+  {
+    "ID": "4c5a94c2-d00b-4d3e-875f-5839f7a833c1",
+    "Name": "Omeprazole"
+  },
+  {
+    "ID": "e184a080-0720-40f5-b3bb-07dca00606d7",
+    "Name": "Albuterol"
+  },
+  {
+    "ID": "d9405f0a-8bb5-4d8e-b2d5-12752e6f0cd1",
+    "Name": "Insulin"
+  }
+]

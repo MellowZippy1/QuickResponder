@@ -1,6 +1,6 @@
 ﻿namespace QuickResponder.Domain
 {
-    public class User
+    public abstract class User
     {
         public Guid ID { get; set; }
         public string FullName { get; set; }

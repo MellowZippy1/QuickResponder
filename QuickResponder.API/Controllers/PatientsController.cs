@@ -26,8 +26,6 @@ public class PatientsController : ControllerBase
     public async Task<Patient> GetPatient(Guid id)
     {   
         return await _appContext.Patients.FindAsync(id);
-
-        // return await _appContext.Patients.SingleAsync(e => e.ID == id);
     }
 
     [HttpPost]

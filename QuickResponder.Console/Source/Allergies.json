@@ -1,0 +1,62 @@
+[
+  {
+    "ID": "5c6a5df6-7b0e-4f59-a8f6-9b8d7b1a0a01",
+    "Name": "Peanuts"
+  },
+  {
+    "ID": "a2c62b3f-3d0f-42b8-a96d-eb936d8c0022",
+    "Name": "Eggs"
+  },
+  {
+    "ID": "1f3a3a58-f0bf-4b25-8e6a-4e7a86b9af45",
+    "Name": "Shellfish"
+  },
+  {
+    "ID": "9d31837a-8b4c-45cb-b764-8cd5940f4a7e",
+    "Name": "Milk"
+  },
+  {
+    "ID": "764e90d4-71a1-41cf-a8e7-4efb2e15510c",
+    "Name": "Soy"
+  },
+  {
+    "ID": "2a3a201d-053d-4c13-8b24-ee7310f571b7",
+    "Name": "Wheat"
+  },
+  {
+    "ID": "8e1b3ebf-93c2-4da7-bfc5-6e3a82f3e555",
+    "Name": "Tree Nuts"
+  },
+  {
+    "ID": "6a78d1a5-8a43-4ee3-8a0e-853c01b8a5ac",
+    "Name": "Fish"
+  },
+  {
+    "ID": "c362f440-3fb4-42c0-afcc-cda7605a6a9f",
+    "Name": "Sesame"
+  },
+  {
+    "ID": "4e86ac66-b891-48a7-ae44-b9884b64e6b4",
+    "Name": "Mustard"
+  },
+  {
+    "ID": "7e63a5c2-eaf2-4f6d-a66e-183d8a6f745e",
+    "Name": "Gluten"
+  },
+  {
+    "ID": "1c5cbf93-d23f-490c-9ba6-77556bb7ebf1",
+    "Name": "Lactose"
+  },
+  {
+    "ID": "3a9519a9-18c2-49a1-9b0e-d6ed4e48eb62",
+    "Name": "Corn"
+  },
+  {
+    "ID": "f7b10da9-6064-4a3e-a8b0-66f19a31c849",
+    "Name": "Mango"
+  },
+  {
+    "ID": "2b92e16f-0c89-4c4b-b1eb-57db5b2ed4c5",
+    "Name": "Avocado"
+  }
+]

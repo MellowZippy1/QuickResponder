@@ -12,7 +12,8 @@ namespace QuickResponder.Domain
          * Important patient information based on article from Mayo Clinic.
          * https://www.mayoclinic.org/first-aid/emergency-health-information/basics/art-20134333
          */
-        public Guid ID { get; set; }
+        
+        public Guid PatientID { get; set; }
         
         /*
          * Patient name can be found in parent class.
