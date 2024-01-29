@@ -11,8 +11,8 @@ using QuickResponder.Infrastructure;
 namespace QuickResponder.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240129002010_AddedConfigurations")]
-    partial class AddedConfigurations
+    [Migration("20240129163427_EditedConfig")]
+    partial class EditedConfig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -125,7 +125,7 @@ namespace QuickResponder.Infrastructure.Migrations
 
             modelBuilder.Entity("QuickResponder.Domain.Patient", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<Guid>("PatientID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
@@ -148,6 +148,9 @@ namespace QuickResponder.Infrastructure.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid>("ID")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -166,7 +169,7 @@ namespace QuickResponder.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("PatientID");
 
                     b.ToTable("Patients");
                 });
@@ -200,7 +203,7 @@ namespace QuickResponder.Infrastructure.Migrations
 
             modelBuilder.Entity("QuickResponder.Domain.Responder", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<Guid>("ResponderID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
@@ -214,6 +217,9 @@ namespace QuickResponder.Infrastructure.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("ID")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -224,40 +230,9 @@ namespace QuickResponder.Infrastructure.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("ResponderID");
 
                     b.ToTable("Responders");
-                });
-
-            modelBuilder.Entity("QuickResponder.Domain.User", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(320)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("QuickResponder.Domain.Vaccine", b =>

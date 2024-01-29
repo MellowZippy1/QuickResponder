@@ -8,7 +8,7 @@ public class ResponderConfiguration : IEntityTypeConfiguration<Responder>
 {
     public void Configure(EntityTypeBuilder<Responder> builder)
     {
-        builder.HasKey(e => e.ID);
+        builder.HasKey(e => e.ResponderID);
 
         builder.Property<string>(e => e.FullName).HasMaxLength(60);
         builder.Property<string>(e => e.Password).HasMaxLength(255);

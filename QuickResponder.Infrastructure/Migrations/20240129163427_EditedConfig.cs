@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace QuickResponder.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedConfigurations : Migration
+    public partial class EditedConfig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,12 +27,13 @@ namespace QuickResponder.Infrastructure.Migrations
                 name: "Patients",
                 columns: table => new
                 {
-                    ID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PatientID = table.Column<Guid>(type: "TEXT", nullable: false),
                     Gender = table.Column<int>(type: "INTEGER", nullable: false),
                     DateOfBirth = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     PostalCode = table.Column<string>(type: "TEXT", nullable: false),
                     BloodType = table.Column<int>(type: "INTEGER", nullable: false),
                     Religion = table.Column<string>(type: "TEXT", nullable: false),
+                    ID = table.Column<Guid>(type: "TEXT", nullable: false),
                     FullName = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
                     Password = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     Email = table.Column<string>(type: "TEXT", maxLength: 320, nullable: false),
@@ -40,13 +41,14 @@ namespace QuickResponder.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Patients", x => x.ID);
+                    table.PrimaryKey("PK_Patients", x => x.PatientID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Responders",
                 columns: table => new
                 {
+                    ResponderID = table.Column<Guid>(type: "TEXT", nullable: false),
                     ID = table.Column<Guid>(type: "TEXT", nullable: false),
                     FullName = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
                     Password = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
@@ -55,22 +57,7 @@ namespace QuickResponder.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Responders", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "User",
-                columns: table => new
-                {
-                    ID = table.Column<Guid>(type: "TEXT", nullable: false),
-                    FullName = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
-                    Password = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
-                    Email = table.Column<string>(type: "TEXT", maxLength: 320, nullable: false),
-                    Phone = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User", x => x.ID);
+                    table.PrimaryKey("PK_Responders", x => x.ResponderID);
                 });
 
             migrationBuilder.CreateTable(
@@ -88,7 +75,7 @@ namespace QuickResponder.Infrastructure.Migrations
                         name: "FK_Allergy_Patients_PatientID",
                         column: x => x.PatientID,
                         principalTable: "Patients",
-                        principalColumn: "ID");
+                        principalColumn: "PatientID");
                 });
 
             migrationBuilder.CreateTable(
@@ -106,7 +93,7 @@ namespace QuickResponder.Infrastructure.Migrations
                         name: "FK_MedicalCondition_Patients_PatientID",
                         column: x => x.PatientID,
                         principalTable: "Patients",
-                        principalColumn: "ID");
+                        principalColumn: "PatientID");
                 });
 
             migrationBuilder.CreateTable(
@@ -126,7 +113,7 @@ namespace QuickResponder.Infrastructure.Migrations
                         name: "FK_MedicalDevice_Patients_PatientID",
                         column: x => x.PatientID,
                         principalTable: "Patients",
-                        principalColumn: "ID");
+                        principalColumn: "PatientID");
                 });
 
             migrationBuilder.CreateTable(
@@ -152,7 +139,7 @@ namespace QuickResponder.Infrastructure.Migrations
                         name: "FK_Prescription_Patients_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Patients",
-                        principalColumn: "ID",
+                        principalColumn: "PatientID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -172,7 +159,7 @@ namespace QuickResponder.Infrastructure.Migrations
                         name: "FK_Vaccine_Patients_PatientID",
                         column: x => x.PatientID,
                         principalTable: "Patients",
-                        principalColumn: "ID");
+                        principalColumn: "PatientID");
                 });
 
             migrationBuilder.CreateTable(
@@ -190,13 +177,13 @@ namespace QuickResponder.Infrastructure.Migrations
                         name: "FK_Incident_Patients_PatientID",
                         column: x => x.PatientID,
                         principalTable: "Patients",
-                        principalColumn: "ID",
+                        principalColumn: "PatientID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Incident_Responders_ResponderID",
                         column: x => x.ResponderID,
                         principalTable: "Responders",
-                        principalColumn: "ID",
+                        principalColumn: "ResponderID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -258,9 +245,6 @@ namespace QuickResponder.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Prescription");
-
-            migrationBuilder.DropTable(
-                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Vaccine");

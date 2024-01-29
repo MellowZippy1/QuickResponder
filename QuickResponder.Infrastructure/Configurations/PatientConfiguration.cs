@@ -8,7 +8,7 @@ public class PatientConfiguration : IEntityTypeConfiguration<Patient>
 {
     public void Configure(EntityTypeBuilder<Patient> builder)
     {
-        builder.HasKey(e => e.ID);
+        builder.HasKey(e => e.PatientID);
 
         builder.Property<string>(e => e.FullName).HasMaxLength(60);
         builder.Property<string>(e => e.Password).HasMaxLength(255);
