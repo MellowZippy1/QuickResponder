@@ -9,6 +9,7 @@ namespace QuickResponder.Infrastructure
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Medication> Medications { get; set; }
         public DbSet<Responder> Responders { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
