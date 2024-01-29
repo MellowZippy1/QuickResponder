@@ -4,7 +4,7 @@ using QuickResponder.Domain;
 
 namespace QuickResponder.Infrastructure.Configurations;
 
-public class ResponderConfiguration : IEntityTypeConfiguration<User>
+public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
