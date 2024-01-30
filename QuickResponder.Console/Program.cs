@@ -5,6 +5,12 @@ using Newtonsoft.Json;
 
 namespace QuickResponder.Console
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Program
     {
         public static void Main()
@@ -21,6 +27,7 @@ namespace QuickResponder.Console
             var names = GetObjects<string>("C:\\Users\\Basic\\source\\repos\\QuickResponder\\QuickResponder.Console\\Source\\Names.json");
             var birthDates = GetObjects<DateOnly>("C:\\Users\\Basic\\source\\repos\\QuickResponder\\QuickResponder.Console\\Source\\Dates.json");
             var religions = GetObjects<string>("C:\\Users\\Basic\\source\\repos\\QuickResponder\\QuickResponder.Console\\Source\\Religions.json");
+            var medications = GetObjects<Medication>("C:\\Users\\Basic\\source\\repos\\QuickResponder\\QuickResponder.Console\\Source\\Medications.json");
 
             List<Patient> patients = new List<Patient>();
             List<Responder> responders = new List<Responder>();
@@ -80,27 +87,81 @@ namespace QuickResponder.Console
                 patient.Incidents.Add(incident);
             }
 
+            // Create prescriptions
+            for (int i = 0; i < 3; i++)
+            {
+                var prescription = new Prescription()
+                {
+                    Medication = medications[i],
+                    MedicationId = medications[i].ID,
+                    Patient = patients[i],
+                    PatientId = patients[i].ID,
+                    Dosage = random.Next(0, 20),
+                    TimeBetweenDosages = new TimeSpan(random.Next(3600, 86000))
+                };
+
+                patients[i].Prescriptions.Add(prescription);
+            }
+
             // Add dummy data
             foreach (var patient in patients)
             {
                 context.Patients.Add(patient);
-                context.SaveChanges();
             }
 
             foreach (var responder in responders)
             {
                 context.Responders.Add(responder);
-                context.SaveChanges();
             }
 
+            context.SaveChanges();
+
             // Try to retrieve patients
+            List<Patient> getPatients = GetPatients(context);
+            Console.WriteLine(getPatients.Count == 10 ? "Test \"GetPatients\" passed ✓" : "Test \"GetPatients\" failed");
 
             // Try to retrieve responders
+            List<Responder> getResponders = GetResponders(context);
+            Console.WriteLine(getResponders.Count == 5 ? "Test \"GetResponders\" passed ✓" : "Test \"GetResponders\" failed");
 
             // Try to retrieve allergies of a patient
+            List<Allergy> getAllergies = GetAllergies(context, patients[0].PatientID);
+            Console.WriteLine(
+                getAllergies.SequenceEqual(patients[0].Allergies) 
+                    ? "Test \"GetAllergies\" passed ✓" 
+                    : "Test \"GetAllergies\" failed"
+                );
 
-            // Get accident history of a patient
+            Console.ReadKey();
+        }
+        private static List<Allergy> GetAllergies(ApplicationDbContext context, Guid id)
+        {
+            var patient = context.Patients.FirstOrDefault(p => p.PatientID == id);
 
+            if (patient != null)
+            {
+                return patient.Allergies;
+            }
+            else
+            {
+                return new List<Allergy>();
+            }
+        }
+
+
+        private static Patient GetPatient(ApplicationDbContext context, Guid id)
+        {
+            return context.Patients.Single(e =>  e.ID == id);
+        }
+
+        private static List<Patient> GetPatients(ApplicationDbContext context)
+        {
+            return context.Patients.ToList();
+        }
+
+        private static List<Responder> GetResponders(ApplicationDbContext context)
+        {
+            return context.Responders.ToList();
         }
 
         private static List<T> GetObjects<T>(string path)
