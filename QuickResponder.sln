@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickResponder.API", "Quick
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickResponder", "QuickResponder\QuickResponder.csproj", "{4C4E6D48-0026-411D-B222-C14BA035AE4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickResponder.Console", "QuickResponder.Console\QuickResponder.Console.csproj", "{6D2146A6-4665-4BB4-97F6-579D87F3785F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickResponder.Console", "QuickResponder.Console\QuickResponder.Console.csproj", "{6D2146A6-4665-4BB4-97F6-579D87F3785F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
